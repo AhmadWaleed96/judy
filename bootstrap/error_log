@@ -1,0 +1,4 @@
+[16-Aug-2022 22:50:16 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Application' not found in /home/wxkxop1jo6wd/public_html/core/bootstrap/app.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/wxkxop1jo6wd/public_html/core/bootstrap/app.php on line 14
