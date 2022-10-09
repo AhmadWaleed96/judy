@@ -112,7 +112,7 @@
     @include($activeTemplate.'partials.breadcrumb')
 
     @yield('content')
-    
+
 </div>
 
 <!-- footer section start -->
@@ -155,9 +155,9 @@
         $(".langSel").on("change", function() {
             window.location.href = "{{route('home')}}/change/"+$(this).val() ;
         });
-        
+
     })(jQuery);
-    
+
 </script>
 
 <script>

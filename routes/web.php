@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\Auth\LoginController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/clear', function(){
@@ -10,6 +11,9 @@ Route::get('/clear', function(){
 | Web Routes
 |--------------------------------------------------------------------------
 */
+Route::get('/test', function(){
+    return view('templates.basic.layouts.frontend');
+});
 
 Route::namespace('Gateway')->prefix('ipn')->name('ipn.')->group(function () {
     Route::post('paypal', 'Paypal\ProcessController@ipn')->name('Paypal');

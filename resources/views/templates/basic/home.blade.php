@@ -1,4 +1,4 @@
-@extends($activeTemplate.'layouts.frontend')
+@extends('templates.basic.layouts.frontend')
 @section('content')
     @php
         $banner_content = getContent('banner.content', true);
@@ -51,7 +51,7 @@
                                             <option value="">@lang('Select location')</option>
                                             @forelse ($plan_locations as $location)
                                             <option value="{{ $location->location }}">{{ $location->location }}</option>
-                                            @empty                                                
+                                            @empty
                                             @endforelse
                                         </select>
                                     </div>
@@ -86,7 +86,7 @@
                                             <option value="">@lang('Select location')</option>
                                             @forelse ($seminar_locations as $location)
                                             <option value="{{ $location->location }}">{{ $location->location }}</option>
-                                            @empty                                                
+                                            @empty
                                             @endforelse
                                         </select>
                                     </div>
@@ -99,7 +99,7 @@
                                             <option value="">@lang('Select location')</option>
                                             @forelse ($seminar_locations as $location)
                                             <option value="{{ $location->location }}">{{ $location->location }}</option>
-                                            @empty                                                
+                                            @empty
                                             @endforelse
                                         </select>
                                     </div>

@@ -1,4 +1,4 @@
-@extends($activeTemplate.'layouts.frontend')
+@extends('templates.basic.layouts.frontend')
 @section('content')
 @include($activeTemplate.'partials.breadcrumb')
 

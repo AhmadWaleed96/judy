@@ -68,7 +68,7 @@ class LoginController extends Controller
     public function login(Request $request)
     {
 
-        $this->validateLogin($request);
+        // $this->validateLogin($request);
         $lv = @getLatestVersion();
         $general = GeneralSetting::first();
         if (@systemDetails()['version'] < @json_decode($lv)->version) {
@@ -83,10 +83,9 @@ class LoginController extends Controller
         // If the class is using the ThrottlesLogins trait, we can automatically throttle
         // the login attempts for this application. We'll key this by the username and
         // the IP address of the client making these requests into this application.
-        if (method_exists($this, 'hasTooManyLoginAttempts') &&
-            $this->hasTooManyLoginAttempts($request)) {
-            $this->fireLockoutEvent($request);
-            return $this->sendLockoutResponse($request);
+        if (method_exists($this, 'hasTooManyLoginAttempts') && $this->hasTooManyLoginAttempts($request)){
+           return $this->fireLockoutEvent($request);
+            //  $this->sendLockoutResponse($request);
         }
 
         if ($this->attemptLogin($request)) {

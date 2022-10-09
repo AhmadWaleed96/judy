@@ -27,7 +27,7 @@
             @php echo loadReCaptcha() @endphp
         </div>
           @include($activeTemplate.'partials.custom_captcha')
-          
+
           <div class="row gy-1">
             <div class="col-lg-6">
               <div class="form-check custom--checkbox">
@@ -49,7 +49,7 @@
         </form>
       </div>
     </div>
-  </section> 
+  </section>
   <!-- account section end -->
 @endsection
 
