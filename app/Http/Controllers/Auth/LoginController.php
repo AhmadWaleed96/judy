@@ -56,14 +56,14 @@ class LoginController extends Controller
     {
 
 
-        $this->validateLogin($request);
+        // $this->validateLogin($request);
 
-        if(isset($request->captcha)){
-            if(!captchaVerify($request->captcha, $request->captcha_secret)){
-                $notify[] = ['error',"Invalid captcha"];
-                return back()->withNotify($notify)->withInput();
-            }
-        }
+        // if(isset($request->captcha)){
+        //     if(!captchaVerify($request->captcha, $request->captcha_secret)){
+        //         $notify[] = ['error',"Invalid captcha"];
+        //         return back()->withNotify($notify)->withInput();
+        //     }
+        // }
 
         // If the class is using the ThrottlesLogins trait, we can automatically throttle
         // the login attempts for this application. We'll key this by the username and
@@ -126,7 +126,7 @@ class LoginController extends Controller
         $notify[] = ['success', 'You have been logged out.'];
         return redirect()->route('user.login')->withNotify($notify);
     }
-    
+
 
 
 
@@ -163,7 +163,7 @@ class LoginController extends Controller
         $userAgent = osBrowser();
         $userLogin->user_id = $user->id;
         $userLogin->user_ip =  $ip;
-        
+
         $userLogin->browser = @$userAgent['browser'];
         $userLogin->os = @$userAgent['os_platform'];
         $userLogin->save();

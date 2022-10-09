@@ -55,7 +55,7 @@
                             </div>
                         </div><!-- location-card end -->
                     </div><!-- single-slide end -->
-                    @empty                        
+                    @empty
                     @endforelse
 
                 </div>

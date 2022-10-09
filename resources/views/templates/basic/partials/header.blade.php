@@ -40,7 +40,7 @@
                         @foreach($pages as $k => $data)
                             <li><a href="{{route('pages',[$data->slug])}}">{{__($data->name)}}</a></li>
                         @endforeach
-                        <li><a href="{{ route('plans') }}">@lang('Tour Package')</a></li>
+                        <li><a href="{{ route('plans') }}">@lang('Travel Package')</a></li>
                         <li><a href="{{ route('seminars') }}">@lang('Seminar Package')</a></li>
                         <li><a href="{{ route('blogs') }}">@lang('Blog')</a></li>
                         <li><a href="{{ route('contact') }}">@lang('Contact')</a></li>
