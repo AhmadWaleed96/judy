@@ -7,7 +7,7 @@
     @endphp
 
     <!-- hero section start -->
-    <section class="hero bg_img" style="background-image: url({{ getImage('assets/images/frontend/banner/' . @$banner_content->data_values->background_image, '1920x1281') }});">
+    <section class="hero bg_img" style="background-image: url({{ getImage('assets/images/frontend/banner/eg3.jpg' , '1920x1281') }});">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-xxl-6 col-xl-7 col-lg-8 col-md-10 text-center">
@@ -30,7 +30,7 @@
                             <button class="nav-link mw--120 active" id="tour-tab" data-bs-toggle="tab" data-bs-target="#tour"
                                     type="button" role="tab" aria-controls="tour" aria-selected="true">
                                 <i class="las la-globe-africa"></i>
-                                <p>@lang('Tour Package')</p>
+                                <p>@lang('Travel Package')</p>
                             </button>
                         </li>
                         <li class="nav-item" role="presentation">
@@ -51,7 +51,7 @@
                                             <option value="">@lang('Select location')</option>
                                             @forelse ($plan_locations as $location)
                                             <option value="{{ $location->location }}">{{ $location->location }}</option>
-                                            @empty                                                
+                                            @empty
                                             @endforelse
                                         </select>
                                     </div>
@@ -86,7 +86,7 @@
                                             <option value="">@lang('Select location')</option>
                                             @forelse ($seminar_locations as $location)
                                             <option value="{{ $location->location }}">{{ $location->location }}</option>
-                                            @empty                                                
+                                            @empty
                                             @endforelse
                                         </select>
                                     </div>
@@ -99,7 +99,7 @@
                                             <option value="">@lang('Select location')</option>
                                             @forelse ($seminar_locations as $location)
                                             <option value="{{ $location->location }}">{{ $location->location }}</option>
-                                            @empty                                                
+                                            @empty
                                             @endforelse
                                         </select>
                                     </div>

@@ -35,7 +35,6 @@
     @stack('style')
 </head>
 <body>
-
 @stack('fbComment')
 
 <!-- preloader css start -->
@@ -54,7 +53,7 @@
 <div class="main-wrapper">
 
     @yield('content')
-    
+
 </div>
 
 <!-- footer section start -->

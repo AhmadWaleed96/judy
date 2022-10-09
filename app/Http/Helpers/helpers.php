@@ -36,7 +36,7 @@ function sidebarVariation(){
 function systemDetails()
 {
     $system['name'] = 'travellab';
-    $system['version'] = '1.1';
+    $system['version'] = '23231.1';
     return $system;
 }
 

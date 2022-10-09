@@ -23,7 +23,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app['request']->server->set('HTTPS', true);
+        $this->app['request']->server->set('HTTPS', false);
     }
 
     /**
@@ -33,7 +33,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
- 
+
 
         $activeTemplate = activeTemplate();
         $general = GeneralSetting::first();
@@ -43,7 +43,7 @@ class AppServiceProvider extends ServiceProvider
         $viewShare['language'] = Language::all();
         $viewShare['pages'] = Page::where('tempname',$activeTemplate)->where('slug','!=','home')->get();
         view()->share($viewShare);
-        
+
 
         view()->composer('admin.partials.sidenav', function ($view) {
             $view->with([
@@ -74,6 +74,6 @@ class AppServiceProvider extends ServiceProvider
 
 
         Paginator::useBootstrap();
-        
+
     }
 }
