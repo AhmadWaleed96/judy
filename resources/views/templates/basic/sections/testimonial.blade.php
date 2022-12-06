@@ -3,7 +3,7 @@
     $testimonial_elements = getContent('testimonial.element');
 @endphp
 <!-- testimonial section start -->
-<section class="pt-100 pb-100 bg_img dark--overlay-two" style="background-image: url({{ getImage('assets/images/frontend/testimonial/eg7.jpg', '1920x1282') }});">
+<section class="pt-100 pb-100 bg_img dark--overlay-two" style="background-image: url({{ getImage('assets/images/frontend/testimonial/' . @$testimonial_content->data_values->background_image, '1920x1282') }});">
     <div class="container-fluid">
         <div class="row justify-content-center">
             <div class="col-xxl-4 col-xl-5 col-lg-6 col-md-8">

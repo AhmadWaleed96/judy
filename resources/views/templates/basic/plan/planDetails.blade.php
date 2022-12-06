@@ -65,18 +65,18 @@
 
                 @forelse ($plan->included as $incld)
                     <li>@lang($incld)</li>
-                @empty                    
+                @empty
                 @endforelse
-                
+
               </ul>
               <h6 class="mb-3 mt-5">@lang('Excluded')</h6>
               <ul class="cmn-list">
 
                 @forelse ($plan->excluded as $excld)
                     <li>@lang($excld)</li>
-                @empty            
+                @empty
                 @endforelse
-                
+
               </ul>
               <h6 class="mt-5 mb-3">@lang('Tour Map')</h6>
               <div class="tour-map-wrapper">
@@ -93,9 +93,9 @@
                       <a href="{{ getImage(imagePath()['plans']['path'].'/'.$image, imagePath()['plans']['size']) }}" data-rel="lightcase:myCollection:slideshow" class="view-thumb"><i class="las la-plus"></i></a>
                     </div>
                   </div>
-                @empty                    
+                @empty
                 @endforelse
-            
+
               </div>
             </div>
             <div class="tab-pane fade" id="plan" role="tabpanel" aria-labelledby="plan-tab">
@@ -112,9 +112,9 @@
                         </p>
                         </div>
                     </div><!-- tour-plan-block end -->
-                @empty                  
+                @empty
                 @endforelse
-                
+
             </div>
             <div class="tab-pane fade" id="review" role="tabpanel" aria-labelledby="review-tab">
               <div class="course-details-review mb-5">
@@ -122,7 +122,7 @@
                   <div class="rating">{{ @$plan->ratings_avg_rating + 0 }}</div>
                   <div class="content">
                     <div class="ratings d-flex align-items-center justify-content-end fs--18px">
-                      
+
                       @php
                           $rating = $plan->ratings_avg_rating + 0;
                       @endphp
@@ -184,7 +184,7 @@
               </div>
 
               @auth
-              <div class="course-details-review mb-5">                
+              <div class="course-details-review mb-5">
                 <form action="{{ route('user.rating', $plan->id) }}" method="POST">
                   @csrf
 
@@ -217,14 +217,14 @@
                   <div class="d-flex justify-content-end">
                     <button type="submit" class="btn btn--base">@lang('Submit')</button>
                   </div>
-                </form>                  
+                </form>
               </div>
               @else
               <div class="course-details-review mb-5 text-center">
-                <h4 class="text--base">@lang('Please login to add rating!')</h4>                 
+                <h4 class="text--base">@lang('Please login to add rating!')</h4>
               </div>
               @endauth
-              
+
               @forelse ($plan->ratings as $item)
               <div class="single-rating">
                 <div class="single-rating__thumb">
@@ -247,7 +247,7 @@
                   <p class="mt-2">{{ @$item->comment }}</p>
                 </div>
               </div><!-- single-rating end -->
-              @empty                  
+              @empty
               @endforelse
 
             </div>
@@ -328,7 +328,7 @@
         <form action="{{ route('user.booking') }}" method="POST">
           @csrf
 
-          <div class="modal-body">          
+          <div class="modal-body">
 
               <input type="hidden" name="plan_id" value="{{ $plan->id }}">
               <input type="hidden" name="type" value="tour">
@@ -340,7 +340,7 @@
                   <span class="input-group-text"><i class="las la-user"></i></span>
                 </div>
                 <span class="text--danger total"></span>
-              </div>          
+              </div>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn--secondary btn-sm" data-bs-dismiss="modal">@lang('Close')</button>
@@ -379,13 +379,13 @@
 .rating-stars ul {
   list-style-type:none;
   padding:0;
-  
+
   -moz-user-select:none;
   -webkit-user-select:none;
 }
 .rating-stars ul > li.star {
   display:inline-block;
-  
+
 }
 
 /* Idle State of the stars */
@@ -426,7 +426,7 @@
   /* 1. Visualizing things on Hover - See next part for action on click */
   $('#stars li').on('mouseover', function(){
     var onStar = parseInt($(this).data('value'), 10); // The star currently mouse on
-   
+
     // Now highlight all the stars that's not after the current hovered star
     $(this).parent().children('li.star').each(function(e){
       if (e < onStar) {
@@ -436,33 +436,33 @@
         $(this).removeClass('hover');
       }
     });
-    
+
   }).on('mouseout', function(){
     $(this).parent().children('li.star').each(function(e){
       $(this).removeClass('hover');
     });
   });
-  
-  
+
+
   /* 2. Action to perform on click */
   $('#stars li').on('click', function(){
     var onStar = parseInt($(this).data('value'), 10); // The star currently selected
     var stars = $(this).parent().children('li.star');
-    
+
     for (var i = 0; i < stars.length; i++) {
       $(stars[i]).removeClass('selected');
     }
-    
+
     for (var i = 0; i < onStar; i++) {
       $(stars[i]).addClass('selected');
     }
-    
+
     // JUST RESPONSE (Not needed)
     var ratingValue = parseInt($('#stars li.selected').last().data('value'), 10);
     if (ratingValue >= 1) {
       $('#rating').val(ratingValue);
     }
-    
+
   });
   })(jQuery);
 </script>

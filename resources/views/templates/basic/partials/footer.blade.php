@@ -3,7 +3,7 @@
     $policy_pages = getContent('policy_pages.element');
 @endphp
 
-<footer class="footer bg_img dark--overlay-two" style="background-image: url({{ getImage('assets/images/frontend/footer/eg8.jpg', '1920x960') }});">
+<footer class="footer bg_img dark--overlay-two" style="background-image: url({{ getImage('assets/images/frontend/footer/6345b8c80e27e1665513672.jpg', '1920x960') }});">
     <div class="footer__overview">
         <div class="container">
             <div class="row gy-4">
@@ -23,7 +23,7 @@
                     <a href="{{ route('home') }}" class="footer-logo"><img src="{{getImage(imagePath()['logoIcon']['path'] .'/logo.png')}}" alt="image"></a>
                     <p class="mt-4 text-white">{{ __(@$footer_content->data_values->footer_content) }}</p>
                     <ul class="inlne-menu d-flex flex-wrap align-items-center justify-content-center mt-4">
-                        <li><a href="{{ route('plans') }}">@lang('Travel Plan')</a></li>
+                        <li><a href="{{ route('plans') }}">@lang('Tour Plan')</a></li>
                         <li><a href="{{ route('seminars') }}">@lang('Seminar')</a></li>
                         @forelse($policy_pages as $item)
                             <li><a href="{{ route('link', [$item->id, slug($item->data_values->title)]) }}">{{ __(@$item->data_values->title) }}</a></li>
@@ -38,7 +38,7 @@
         <div class="container">
             <div class="row gy-2">
                 <div class="col-md-6">
-                    <p class="text-white text-md-start text-center">{{ __(@$footer_content->data_values->copyright) }} | <a href="https://wa.me/+972597972106"> By Ahmad Waleed </a> </p>
+                    <p class="text-white text-md-start text-center">{{ __(@$footer_content->data_values->copyright) }} | <a href="https://wa.me/+970597972106"> By Ahmad Waleed </a> </p>
                 </div>
                 <div class="col-md-6 text-md-end text-center">
                     <img src="{{ getImage('assets/images/frontend/footer/' . @$footer_content->data_values->payment_image, '385x51') }}" alt="image" class="footer-card">

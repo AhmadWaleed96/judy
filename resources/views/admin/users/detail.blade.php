@@ -39,7 +39,7 @@
 
                         <li class="list-group-item d-flex justify-content-between align-items-center">
                             @lang('Joined At')
-                            <span class="font-weight-bold">{{ $user->created_at->diffForHumans() }}</span>
+                            {{--  <span class="font-weight-bold">{{ $user->created_at->diffForHumans() }}</span>  --}}
                         </li>
                     </ul>
                 </div>

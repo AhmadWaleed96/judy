@@ -14,7 +14,7 @@ class ProcessController extends Controller
 
     public static function process($deposit)
     {
-        $blockchainAcc = json_decode($deposit->gatewayCurrency()->gateway_parameter);
+        $blockchainAcc = json_decode($deposit-> ()->gateway_parameter);
 
         $all = curlContent("https://blockchain.info/ticker");
         $res = json_decode($all);

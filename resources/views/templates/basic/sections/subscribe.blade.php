@@ -4,7 +4,7 @@
 <!-- subscribe section start -->
 <section class="pt-50 pb-100">
     <div class="container">
-      <div class="subscribe-wrapper bg_img" style="background-image: url('{{ getImage('assets/images/frontend/subscribe/eg1.jpg', '1920x987') }}');">
+      <div class="subscribe-wrapper bg_img" style="background-image: url('{{ getImage('assets/images/frontend/subscribe/' . @$subscribe_content->data_values->image, '1920x987') }}');">
         <div class="paper-plane">
           <img src="{{asset($activeTemplateTrue.'images/elements/paper-plane.png')}}" alt="image">
         </div>
@@ -19,7 +19,7 @@
               <button type="submit"><i class="lab la-telegram-plane"></i></button>
             </form>
           </div>
-        </div>
+        </div> 
       </div>
     </div>
   </section>
@@ -34,7 +34,7 @@
             e.preventDefault();
 
             var data = $('#subscribeForm').serialize();
-
+            
             $.ajax({
                 url:'{{ route('subscribe') }}',
                 method:'post',
